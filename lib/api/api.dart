@@ -78,4 +78,10 @@ class Api {
 
   //精品歌单tags
   static const String highQualityTags = '/api/playlist/highquality/tags';
+
+  /// song
+  //新歌速递
+  static const String newSongs = '/api/v1/discovery/new/songs';
+  //歌曲
+  static const String songUrl = '/api/song/enhance/player/url/v1';
 }

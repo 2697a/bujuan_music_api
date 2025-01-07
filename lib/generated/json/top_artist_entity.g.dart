@@ -11,10 +11,8 @@ TopArtistEntity $TopArtistEntityFromJson(Map<String, dynamic> json) {
   if (more != null) {
     topArtistEntity.more = more;
   }
-  final List<TopArtistArtists>? artists = (json['artists'] as List<dynamic>?)
-      ?.map(
-          (e) => jsonConvert.convert<TopArtistArtists>(e) as TopArtistArtists)
-      .toList();
+  final List<TopArtistArtists>? artists = (json['artists'] as List<dynamic>?)?.map(
+          (e) => jsonConvert.convert<TopArtistArtists>(e) as TopArtistArtists).toList();
   if (artists != null) {
     topArtistEntity.artists = artists;
   }

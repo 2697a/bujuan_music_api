@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:bujuan_music_api/api/album/album_api.dart';
 import 'package:bujuan_music_api/api/playlist/playlist_api.dart';
 import 'package:bujuan_music_api/api/recommend/recommend_api.dart';
+import 'package:bujuan_music_api/api/song/song_api.dart';
 import 'package:bujuan_music_api/api/top/top_api.dart';
 import 'package:bujuan_music_api/generated/json/base/json_convert_content.dart';
 import 'package:cookie_jar/cookie_jar.dart';
@@ -14,7 +15,7 @@ import 'cookie.dart';
 import '../api/user/user_api.dart';
 import 'music_interceptors.dart';
 
-class BujuanMusicManager with UserApi, RecommendApi, TopApi, AlbumApi, PlaylistApi {
+class BujuanMusicManager with UserApi, RecommendApi, TopApi, AlbumApi, PlaylistApi,SongApi {
   static final BujuanMusicManager _instance = BujuanMusicManager._internal();
 
   factory BujuanMusicManager() => _instance;

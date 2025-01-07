@@ -1,8 +1,7 @@
 import 'package:bujuan_music_api/generated/json/base/json_convert_content.dart';
 import 'package:bujuan_music_api/api/recommend/entity/recommend_resource_entity.dart';
 
-RecommendResourceEntity $RecommendResourceEntityFromJson(
-    Map<String, dynamic> json) {
+RecommendResourceEntity $RecommendResourceEntityFromJson(Map<String, dynamic> json) {
   final RecommendResourceEntity recommendResourceEntity = RecommendResourceEntity();
   final int? code = jsonConvert.convert<int>(json['code']);
   if (code != null) {
@@ -16,20 +15,17 @@ RecommendResourceEntity $RecommendResourceEntityFromJson(
   if (haveRcmdSongs != null) {
     recommendResourceEntity.haveRcmdSongs = haveRcmdSongs;
   }
-  final List<
-      RecommendResourceRecommend>? recommend = (json['recommend'] as List<
-      dynamic>?)?.map(
-          (e) =>
-      jsonConvert.convert<RecommendResourceRecommend>(
-          e) as RecommendResourceRecommend).toList();
+  final List<RecommendResourceRecommend>? recommend = (json['recommend'] as List<dynamic>?)
+      ?.map(
+          (e) => jsonConvert.convert<RecommendResourceRecommend>(e) as RecommendResourceRecommend)
+      .toList();
   if (recommend != null) {
     recommendResourceEntity.recommend = recommend;
   }
   return recommendResourceEntity;
 }
 
-Map<String, dynamic> $RecommendResourceEntityToJson(
-    RecommendResourceEntity entity) {
+Map<String, dynamic> $RecommendResourceEntityToJson(RecommendResourceEntity entity) {
   final Map<String, dynamic> data = <String, dynamic>{};
   data['code'] = entity.code;
   data['featureFirst'] = entity.featureFirst;
@@ -53,8 +49,7 @@ extension RecommendResourceEntityExtension on RecommendResourceEntity {
   }
 }
 
-RecommendResourceRecommend $RecommendResourceRecommendFromJson(
-    Map<String, dynamic> json) {
+RecommendResourceRecommend $RecommendResourceRecommendFromJson(Map<String, dynamic> json) {
   final RecommendResourceRecommend recommendResourceRecommend = RecommendResourceRecommend();
   final int? id = jsonConvert.convert<int>(json['id']);
   if (id != null) {
@@ -104,8 +99,7 @@ RecommendResourceRecommend $RecommendResourceRecommendFromJson(
   return recommendResourceRecommend;
 }
 
-Map<String, dynamic> $RecommendResourceRecommendToJson(
-    RecommendResourceRecommend entity) {
+Map<String, dynamic> $RecommendResourceRecommendToJson(RecommendResourceRecommend entity) {
   final Map<String, dynamic> data = <String, dynamic>{};
   data['id'] = entity.id;
   data['type'] = entity.type;
@@ -193,8 +187,7 @@ RecommendResourceRecommendCreator $RecommendResourceRecommendCreatorFromJson(
   if (city != null) {
     recommendResourceRecommendCreator.city = city;
   }
-  final String? backgroundUrl = jsonConvert.convert<String>(
-      json['backgroundUrl']);
+  final String? backgroundUrl = jsonConvert.convert<String>(json['backgroundUrl']);
   if (backgroundUrl != null) {
     recommendResourceRecommendCreator.backgroundUrl = backgroundUrl;
   }
@@ -202,13 +195,11 @@ RecommendResourceRecommendCreator $RecommendResourceRecommendCreatorFromJson(
   if (avatarImgId != null) {
     recommendResourceRecommendCreator.avatarImgId = avatarImgId;
   }
-  final int? backgroundImgId = jsonConvert.convert<int>(
-      json['backgroundImgId']);
+  final int? backgroundImgId = jsonConvert.convert<int>(json['backgroundImgId']);
   if (backgroundImgId != null) {
     recommendResourceRecommendCreator.backgroundImgId = backgroundImgId;
   }
-  final String? detailDescription = jsonConvert.convert<String>(
-      json['detailDescription']);
+  final String? detailDescription = jsonConvert.convert<String>(json['detailDescription']);
   if (detailDescription != null) {
     recommendResourceRecommendCreator.detailDescription = detailDescription;
   }
@@ -237,13 +228,11 @@ RecommendResourceRecommendCreator $RecommendResourceRecommendCreatorFromJson(
   if (remarkName != null) {
     recommendResourceRecommendCreator.remarkName = remarkName;
   }
-  final String? avatarImgIdStr = jsonConvert.convert<String>(
-      json['avatarImgIdStr']);
+  final String? avatarImgIdStr = jsonConvert.convert<String>(json['avatarImgIdStr']);
   if (avatarImgIdStr != null) {
     recommendResourceRecommendCreator.avatarImgIdStr = avatarImgIdStr;
   }
-  final String? backgroundImgIdStr = jsonConvert.convert<String>(
-      json['backgroundImgIdStr']);
+  final String? backgroundImgIdStr = jsonConvert.convert<String>(json['backgroundImgIdStr']);
   if (backgroundImgIdStr != null) {
     recommendResourceRecommendCreator.backgroundImgIdStr = backgroundImgIdStr;
   }
