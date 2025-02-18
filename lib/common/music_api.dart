@@ -66,3 +66,4 @@ class BujuanMusicManager with UserApi, RecommendApi, TopApi, AlbumApi, PlaylistA
 
   Dio get dio => _dio;
 }
+

@@ -1,13 +1,19 @@
 import 'dart:convert';
 
 import 'package:bujuan_music_api/api/api.dart';
+import 'package:bujuan_music_api/api/playlist/entity/catalogue_entity.dart';
+import 'package:bujuan_music_api/api/playlist/entity/create_playlist_entity.dart';
+import 'package:bujuan_music_api/api/playlist/entity/high_quality_tags_entity.dart';
+import 'package:bujuan_music_api/api/playlist/entity/playlist_detail_entity.dart';
 import 'package:bujuan_music_api/bujuan_music_api.dart';
+
+import '../user/entity/string_entity.dart';
 
 mixin PlaylistApi {
   /// 歌单分类
   ///
-  void playlistCatalogue() {
-    BujuanMusicManager().post(url: Api.playlistCatalogue);
+  Future<CatalogueEntity?> playlistCatalogue() async {
+    return await BujuanMusicManager().post<CatalogueEntity>(url: Api.playlistCatalogue);
   }
 
   ///创建歌单
@@ -15,34 +21,37 @@ mixin PlaylistApi {
   /// [name] 歌单名称（必选）
   /// [privacy] 歌单隐私状态（必选 0 普通歌单 1 隐私歌单）
   /// [type] 歌单类型（可选 NORMAL|VIDEO|SHARED）
-  void createPlaylist({
+  Future<CreatePlaylistEntity?> createPlaylist({
     required String name,
     required int privacy,
     String type = 'NORMAL',
-  }) {
+  }) async {
     final data = {
       'name': name,
       'privacy': privacy,
       'type': type,
     };
-    BujuanMusicManager().post(url: Api.createPlaylist, data: data);
+    return await BujuanMusicManager()
+        .post<CreatePlaylistEntity>(url: Api.createPlaylist, data: data);
   }
 
   /// 删除歌单
   ///
   /// [ids]要删除的歌单id（必选）
-  void removePlaylist({required List<String> ids}) {
-    BujuanMusicManager().post(url: Api.removePlaylist, data: {'ids': ids});
+  Future<StringEntity?> removePlaylist({required List<String> ids}) async {
+    return await BujuanMusicManager().post<StringEntity>(
+        url: Api.removePlaylist, data: {'ids': ids});
   }
 
   /// 更新歌单描述
   ///
   /// [id] 歌单id（必选）
-  void updatePlaylistDesc({
+  Future<StringEntity?> updatePlaylistDesc({
     required int id,
     required String desc,
-  }) {
-    BujuanMusicManager().post(url: Api.updatePlaylistDesc, data: {'id': id, 'desc': desc});
+  }) async {
+    return await BujuanMusicManager().post<StringEntity>(
+        url: Api.updatePlaylistDesc, data: {'id': id, 'desc': desc});
   }
 
   /// 歌单详情
@@ -51,41 +60,41 @@ mixin PlaylistApi {
   /// [n] 暂时不知道啥意思（可选）
   /// [s] 暂时不知道啥意思（可选）
   /// [dynamic] 是否动态（可选）
-  void playlistDetail({
+  Future<PlaylistDetailEntity?> playlistDetail({
     required int id,
     int n = 1000,
     int s = 8,
     bool dynamic = false,
-  }) {
+  }) async {
     final data = {
       'id': id,
-      'n': 100000,
+      'n': n,
       's': s,
     };
-    BujuanMusicManager()
-        .post(url: dynamic ? Api.playlistDetailDynamic : Api.playlistDetail, data: data);
+    return await BujuanMusicManager().post<PlaylistDetailEntity>(
+        url: dynamic ? Api.playlistDetailDynamic : Api.playlistDetail, data: data);
   }
 
   /// 相关歌单推荐
   ///
   /// [id] 歌单id（必选）
   /// [newStyle] newStyle（可选）
-  void recommendByPlaylist({
+  _recommendByPlaylist({
     required int id,
     bool newStyle = true,
-  }) {
+  }) async {
     final data = {
       'id': id,
       'scene': 'playlist_head',
       'newStyle': newStyle,
     };
-    BujuanMusicManager().post(url: Api.recommendByPlaylist, data: data);
+    return await BujuanMusicManager().post(url: Api.recommendByPlaylist, data: data);
   }
 
   /// 精品歌单tags
   ///
-  void highQualityTags() {
-    BujuanMusicManager().post(url: Api.highQualityTags);
+  Future<HighQualityTagsEntity?> highQualityTags() async {
+    return await BujuanMusicManager().post<HighQualityTagsEntity>(url: Api.highQualityTags);
   }
 
   /// 导入歌单（三者取其1）
@@ -109,11 +118,13 @@ mixin PlaylistApi {
     playlistName += DateTime.now().toIso8601String();
     //文字导入
     if (text.isNotEmpty) {
-      songs = jsonEncode([{
-        'name': playlistName,
-        'type': '',
-        'url': Uri.encodeFull('rpc://playlist/import?text=$text')
-      }]);
+      songs = jsonEncode([
+        {
+          'name': playlistName,
+          'type': '',
+          'url': Uri.encodeFull('rpc://playlist/import?text=$text')
+        }
+      ]);
     }
     //链接导入
     if (link.isNotEmpty) {}
