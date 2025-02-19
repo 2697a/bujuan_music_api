@@ -82,6 +82,14 @@ class Api {
   /// song
   //新歌速递
   static const String newSongs = '/api/v1/discovery/new/songs';
-  //歌曲
+  //歌曲地址
   static const String songUrl = '/api/song/enhance/player/url/v1';
+  //歌曲详情
+  static const String songDetail = '/api/v3/song/detail';
+  //检查歌曲是否喜欢
+  static const String songLikeCheck = '/api/song/like/check';
+  //歌曲音质详情
+  static const String songQualityDetail = '/api/song/music/detail/get';
+  //歌曲被喜欢数量
+  static const String songLikeCount = '/api/song/red/count';
 }
