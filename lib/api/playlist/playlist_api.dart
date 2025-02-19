@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:bujuan_music_api/api/api.dart';
 import 'package:bujuan_music_api/api/playlist/entity/catalogue_entity.dart';
 import 'package:bujuan_music_api/api/playlist/entity/create_playlist_entity.dart';
@@ -79,17 +77,17 @@ mixin PlaylistApi {
   ///
   /// [id] 歌单id（必选）
   /// [newStyle] newStyle（可选）
-  _recommendByPlaylist({
-    required int id,
-    bool newStyle = true,
-  }) async {
-    final data = {
-      'id': id,
-      'scene': 'playlist_head',
-      'newStyle': newStyle,
-    };
-    return await BujuanMusicManager().post(url: Api.recommendByPlaylist, data: data);
-  }
+  // _recommendByPlaylist({
+  //   required int id,
+  //   bool newStyle = true,
+  // }) async {
+  //   final data = {
+  //     'id': id,
+  //     'scene': 'playlist_head',
+  //     'newStyle': newStyle,
+  //   };
+  //   return await BujuanMusicManager().post(url: Api.recommendByPlaylist, data: data);
+  // }
 
   /// 精品歌单tags
   ///
@@ -102,31 +100,31 @@ mixin PlaylistApi {
   /// [local] 元数据导入（可选）
   /// [text] 文字导入（可选）
   /// [link] 链接导入（可选）
-  void importPlaylist({
-    Map<String, dynamic>? local,
-    String text = '',
-    String link = '',
-    String playlistName = '导入歌单',
-  }) {
-    String songs = '';
-    //元数据导入
-    if (local != null) {
-      // local.map((key,value){
-      //  return {};
-      // });
-    }
-    playlistName += DateTime.now().toIso8601String();
-    //文字导入
-    if (text.isNotEmpty) {
-      songs = jsonEncode([
-        {
-          'name': playlistName,
-          'type': '',
-          'url': Uri.encodeFull('rpc://playlist/import?text=$text')
-        }
-      ]);
-    }
-    //链接导入
-    if (link.isNotEmpty) {}
-  }
+  // void importPlaylist({
+  //   Map<String, dynamic>? local,
+  //   String text = '',
+  //   String link = '',
+  //   String playlistName = '导入歌单',
+  // }) {
+  //   String songs = '';
+  //   //元数据导入
+  //   if (local != null) {
+  //     // local.map((key,value){
+  //     //  return {};
+  //     // });
+  //   }
+  //   playlistName += DateTime.now().toIso8601String();
+  //   //文字导入
+  //   if (text.isNotEmpty) {
+  //     songs = jsonEncode([
+  //       {
+  //         'name': playlistName,
+  //         'type': '',
+  //         'url': Uri.encodeFull('rpc://playlist/import?text=$text')
+  //       }
+  //     ]);
+  //   }
+  //   //链接导入
+  //   if (link.isNotEmpty) {}
+  // }
 }

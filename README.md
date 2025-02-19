@@ -19,9 +19,7 @@ know whether this package might be useful for them.
 TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+三方音乐API
 
 ## Usage
 # 初始化
