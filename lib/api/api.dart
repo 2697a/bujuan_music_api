@@ -92,4 +92,9 @@ class Api {
   static const String songQualityDetail = '/api/song/music/detail/get';
   //歌曲被喜欢数量
   static const String songLikeCount = '/api/song/red/count';
+
+  /// mv
+  //Mv播放地址
+  static const String mvUrl = '/weapi/song/enhance/play/mv/url';
+
 }

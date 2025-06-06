@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart' show debugPrint;
 import 'package:bujuan_music_api/api/album/entity/album_info_entity.dart';
 import 'package:bujuan_music_api/api/album/entity/new_album_entity.dart';
+import 'package:bujuan_music_api/api/mv/entity/mv_url_entity.dart';
 import 'package:bujuan_music_api/api/playlist/entity/catalogue_entity.dart';
 import 'package:bujuan_music_api/api/playlist/entity/create_playlist_entity.dart';
 import 'package:bujuan_music_api/api/playlist/entity/high_quality_tags_entity.dart';
@@ -243,6 +244,13 @@ class JsonConvert {
     if (<NewAlbumAlbumsArtist>[] is M) {
       return data.map<NewAlbumAlbumsArtist>((Map<String, dynamic> e) =>
           NewAlbumAlbumsArtist.fromJson(e)).toList() as M;
+    }
+    if (<MvUrlEntity>[] is M) {
+      return data.map<MvUrlEntity>((Map<String, dynamic> e) => MvUrlEntity.fromJson(e))
+          .toList() as M;
+    }
+    if (<MvUrlData>[] is M) {
+      return data.map<MvUrlData>((Map<String, dynamic> e) => MvUrlData.fromJson(e)).toList() as M;
     }
     if (<CatalogueEntity>[] is M) {
       return data.map<CatalogueEntity>((Map<String, dynamic> e) => CatalogueEntity.fromJson(e))
@@ -681,6 +689,8 @@ class JsonConvertClassCollection {
     (NewAlbumAlbums).toString(): NewAlbumAlbums.fromJson,
     (NewAlbumAlbumsArtists).toString(): NewAlbumAlbumsArtists.fromJson,
     (NewAlbumAlbumsArtist).toString(): NewAlbumAlbumsArtist.fromJson,
+    (MvUrlEntity).toString(): MvUrlEntity.fromJson,
+    (MvUrlData).toString(): MvUrlData.fromJson,
     (CatalogueEntity).toString(): CatalogueEntity.fromJson,
     (CatalogueAll).toString(): CatalogueAll.fromJson,
     (CatalogueSub).toString(): CatalogueSub.fromJson,

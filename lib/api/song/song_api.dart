@@ -39,7 +39,7 @@ mixin SongApi {
 
   /// 歌曲详情
   /// [ids] 歌曲id数组 不可超过1000
-  Future<SongDetailEntity?> songDetail({required List<String> ids}) async {
+  Future<SongDetailEntity?> songDetail({required List<int> ids}) async {
     if (ids.length > 1000) {
       return SongDetailEntity()
         ..songs = []
