@@ -13,7 +13,7 @@ const String defaultHost = 'https://interface.music.163.com';
 const String defaultUrl = 'https://music.163.com';
 const realIp = 'X-Real-IP';
 
-enum EncryptType { linuxForward, weApi, eApi }
+enum EncryptType { linuxForward, weApi, eApi, api }
 
 enum UserAgent { random, pc, mobile }
 
@@ -78,7 +78,8 @@ class MusicApiInterceptors extends InterceptorsWrapper {
         _handleWeApi(options);
         break;
       case EncryptType.eApi:
-        _handleEApi(options, cookies);
+      case EncryptType.api:
+        _handleEApi(options, cookies,options.extra['encryptType']);
         break;
     }
     options.extra['hookRequestDataSuccess'] = true;
@@ -134,6 +135,7 @@ class MusicApiInterceptors extends InterceptorsWrapper {
   }
 
   _handleWeApi(RequestOptions options) {
+    print('----------${options.extra}--${options.data}');
     var oldUriStr = options.uri.toString();
     options.path = oldUriStr.replaceAll(RegExp(r'\w*api'), 'weapi');
 
@@ -152,9 +154,11 @@ class MusicApiInterceptors extends InterceptorsWrapper {
     options.data = weApi(body).entries.map((e) => '${e.key}=${e.value}').join('&');
   }
 
-  _handleEApi(RequestOptions options, List<Cookie> cookies) {
+  _handleEApi(RequestOptions options, List<Cookie> cookies, EncryptType type) {
     var oldUriStr = options.uri.toString();
-    options.path = oldUriStr.replaceAll(RegExp(r'\w*api'), 'eapi');
+    if (type == EncryptType.eApi) {
+      options.path = oldUriStr.replaceAll(RegExp(r'\w*api'), 'eapi');
+    }
 
     var header = {};
     Map<String, String> cookiesMap = cookies.fold(<String, String>{}, (map, element) {
@@ -181,8 +185,12 @@ class MusicApiInterceptors extends InterceptorsWrapper {
         '${DateTime.now().millisecondsSinceEpoch}${Random().nextInt(1000).toString().padLeft(4, '0')}';
     options.data = Map.from(options.data);
     options.data['header'] = header;
-    var url = options.path.replaceAll('https://music.163.com', '');
-    var body = jsonEncode(options.data);
-    options.data = eApi(url, body).entries.map((e) => '${e.key}=${e.value}').join('&');
+    if(type == EncryptType.eApi){
+      var url = options.path.replaceAll('https://music.163.com', '');
+      var body = jsonEncode(options.data);
+      options.data = eApi(url, body).entries.map((e) => '${e.key}=${e.value}').join('&');
+    }else{
+      options.data = options.data.entries.map((e) => '${e.key}=${e.value}').join('&');
+    }
   }
 }

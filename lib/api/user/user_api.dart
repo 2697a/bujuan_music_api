@@ -78,10 +78,10 @@ mixin UserApi {
   /// 二维码key
   ///
   /// [type] 类型（可选，默认为 3）
-  Future<QrcodeKeyEntity?> qrCodeKey({int type = 3}) async {
-    final data = {'type': type};
+  Future<QrcodeKeyEntity?> qrCodeKey({int type = 1}) async {
+    final data = {'type': type, 'timerstamp': '${DateTime.now()}'};
     return await BujuanMusicManager()
-        .post<QrcodeKeyEntity>(url: Api.qrCodeKey, options: createOption(), data: data);
+        .post<QrcodeKeyEntity>(url: Api.qrCodeKey, options: createOption(encryptType: EncryptType.weApi), data: data);
   }
 
   /// 二维码
@@ -96,14 +96,11 @@ mixin UserApi {
   /// [type] 类型（可选，默认为 3）
   Future<StringEntity?> checkQrCode({
     required String key,
-    int type = 3,
+    int type = 1,
   }) async {
-    final data = {
-      'key': key,
-      'type': type,
-    };
+    final data = {'key': key, 'type': type, 'timerstamp': '${DateTime.now()}'};
     return await BujuanMusicManager()
-        .post<StringEntity>(url: Api.checkQrCode, options: createOption(), data: data);
+        .post<StringEntity>(url: Api.checkQrCode, options: createOption(encryptType: EncryptType.weApi), data: data);
   }
 
   ///用户信息（需登录）

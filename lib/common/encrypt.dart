@@ -9,9 +9,8 @@ const iv = '0102030405060708'; // AES IV
 const presetKey = '0CoJUm6Qyw8W8jud'; // 预设的 AES 密钥
 const linuxapiKey = 'rFgB&h#%2?^eDg:Q'; // Linux API 使用的 AES 密钥
 const base62 = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'; // 用于生成随机密钥的字符集
-const publicKeyPem = '''-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7clFSs6sXqHauqKWqdtLkF2KexO40H1YTX8z2lSgBBOAxLsvaklV8k4cBFK9snQXE9/DDaFt6Rr7iVZMldczhC0JNgTz+SHXT6CBHuX3e9SdB1Ua44oncaTWz7OBGLbCiK45wIDAQAB
------END PUBLIC KEY-----''';
+const publicKeyPem =
+    '-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7clFSs6sXqHauqKWqdtLkF2KexO40H1YTX8z2lSgBBOAxLsvaklV8k4cBFK9snQXE9/DDaFt6Rr7iVZMldczhC0JNgTz+SHXT6CBHuX3e9SdB1Ua44oncaTWz7OBGLbCiK45wIDAQAB\n-----END PUBLIC KEY-----';
 const eapiKey = 'e82ckenh8dichen8'; // EAPI 使用的 AES 密钥
 
 // AES 加密函数
@@ -39,7 +38,6 @@ String aesEncrypt(
   }
   return encryptData;
 }
-
 
 // RSA 加密函数
 String rsaEncrypt(String publicKeyPem, Uint8List random16Key) {
