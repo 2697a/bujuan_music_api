@@ -27,7 +27,7 @@ mixin SongApi {
   /// [level] standard, exhigh, lossless, hires, jyeffect(高清环绕声), sky(沉浸环绕声), jymaster(超清母带) 进行音质判断
   /// [encodeType] 编码类型 默认 flac
   Future<SongUrlEntity?> songUrl(
-      {required List<String> ids, String level = 'standard', String encodeType = 'flac'}) async {
+      {required List<String> ids, String level = 'jyeffect', String encodeType = 'flac'}) async {
     final data = {
       'ids': ids,
       'level': level,

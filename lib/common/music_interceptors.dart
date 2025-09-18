@@ -135,7 +135,7 @@ class MusicApiInterceptors extends InterceptorsWrapper {
   }
 
   _handleWeApi(RequestOptions options) {
-    print('----------${options.extra}--${options.data}');
+    // print('----------${options.extra}--${options.data}');
     var oldUriStr = options.uri.toString();
     options.path = oldUriStr.replaceAll(RegExp(r'\w*api'), 'weapi');
 
