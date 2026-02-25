@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/top_artist_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/top_artist_entity.g.dart';
+part 'top_artist_entity.g.dart';
 
 @JsonSerializable()
 class TopArtistEntity {
@@ -11,9 +11,9 @@ class TopArtistEntity {
 
 	TopArtistEntity();
 
-	factory TopArtistEntity.fromJson(Map<String, dynamic> json) => $TopArtistEntityFromJson(json);
+	factory TopArtistEntity.fromJson(Map<String, dynamic> json) => _$TopArtistEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $TopArtistEntityToJson(this);
+	Map<String, dynamic> toJson() => _$TopArtistEntityToJson(this);
 
 	@override
 	String toString() {
@@ -48,9 +48,9 @@ class TopArtistArtists {
 
 	TopArtistArtists();
 
-	factory TopArtistArtists.fromJson(Map<String, dynamic> json) => $TopArtistArtistsFromJson(json);
+	factory TopArtistArtists.fromJson(Map<String, dynamic> json) => _$TopArtistArtistsFromJson(json);
 
-	Map<String, dynamic> toJson() => $TopArtistArtistsToJson(this);
+	Map<String, dynamic> toJson() => _$TopArtistArtistsToJson(this);
 
 	@override
 	String toString() {

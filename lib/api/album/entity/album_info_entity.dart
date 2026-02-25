@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/album_info_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/album_info_entity.g.dart';
+part 'album_info_entity.g.dart';
 
 @JsonSerializable()
 class AlbumInfoEntity {
@@ -12,9 +12,9 @@ class AlbumInfoEntity {
 
 	AlbumInfoEntity();
 
-	factory AlbumInfoEntity.fromJson(Map<String, dynamic> json) => $AlbumInfoEntityFromJson(json);
+	factory AlbumInfoEntity.fromJson(Map<String, dynamic> json) => _$AlbumInfoEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoEntityToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoEntityToJson(this);
 
 	@override
 	String toString() {
@@ -62,9 +62,9 @@ class AlbumInfoSongs {
 
 	AlbumInfoSongs();
 
-	factory AlbumInfoSongs.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsFromJson(json);
+	factory AlbumInfoSongs.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsToJson(this);
 
 	@override
 	String toString() {
@@ -80,9 +80,9 @@ class AlbumInfoSongsAr {
 
 	AlbumInfoSongsAr();
 
-	factory AlbumInfoSongsAr.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsArFromJson(json);
+	factory AlbumInfoSongsAr.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsArFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsArToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsArToJson(this);
 
 	@override
 	String toString() {
@@ -101,9 +101,9 @@ class AlbumInfoSongsAl {
 
 	AlbumInfoSongsAl();
 
-	factory AlbumInfoSongsAl.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsAlFromJson(json);
+	factory AlbumInfoSongsAl.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsAlFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsAlToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsAlToJson(this);
 
 	@override
 	String toString() {
@@ -121,9 +121,9 @@ class AlbumInfoSongsH {
 
 	AlbumInfoSongsH();
 
-	factory AlbumInfoSongsH.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsHFromJson(json);
+	factory AlbumInfoSongsH.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsHFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsHToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsHToJson(this);
 
 	@override
 	String toString() {
@@ -141,9 +141,9 @@ class AlbumInfoSongsSq {
 
 	AlbumInfoSongsSq();
 
-	factory AlbumInfoSongsSq.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsSqFromJson(json);
+	factory AlbumInfoSongsSq.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsSqFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsSqToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsSqToJson(this);
 
 	@override
 	String toString() {
@@ -161,9 +161,9 @@ class AlbumInfoSongsL {
 
 	AlbumInfoSongsL();
 
-	factory AlbumInfoSongsL.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsLFromJson(json);
+	factory AlbumInfoSongsL.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsLFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsLToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsLToJson(this);
 
 	@override
 	String toString() {
@@ -181,9 +181,9 @@ class AlbumInfoSongsM {
 
 	AlbumInfoSongsM();
 
-	factory AlbumInfoSongsM.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsMFromJson(json);
+	factory AlbumInfoSongsM.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsMFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsMToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsMToJson(this);
 
 	@override
 	String toString() {
@@ -225,9 +225,9 @@ class AlbumInfoSongsPrivilege {
 
 	AlbumInfoSongsPrivilege();
 
-	factory AlbumInfoSongsPrivilege.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsPrivilegeFromJson(json);
+	factory AlbumInfoSongsPrivilege.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsPrivilegeFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsPrivilegeToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsPrivilegeToJson(this);
 
 	@override
 	String toString() {
@@ -246,9 +246,9 @@ class AlbumInfoSongsPrivilegeFreeTrialPrivilege {
 
 	AlbumInfoSongsPrivilegeFreeTrialPrivilege();
 
-	factory AlbumInfoSongsPrivilegeFreeTrialPrivilege.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsPrivilegeFreeTrialPrivilegeFromJson(json);
+	factory AlbumInfoSongsPrivilegeFreeTrialPrivilege.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsPrivilegeFreeTrialPrivilegeFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsPrivilegeFreeTrialPrivilegeToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsPrivilegeFreeTrialPrivilegeToJson(this);
 
 	@override
 	String toString() {
@@ -265,9 +265,9 @@ class AlbumInfoSongsPrivilegeChargeInfoList {
 
 	AlbumInfoSongsPrivilegeChargeInfoList();
 
-	factory AlbumInfoSongsPrivilegeChargeInfoList.fromJson(Map<String, dynamic> json) => $AlbumInfoSongsPrivilegeChargeInfoListFromJson(json);
+	factory AlbumInfoSongsPrivilegeChargeInfoList.fromJson(Map<String, dynamic> json) => _$AlbumInfoSongsPrivilegeChargeInfoListFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoSongsPrivilegeChargeInfoListToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoSongsPrivilegeChargeInfoListToJson(this);
 
 	@override
 	String toString() {
@@ -310,9 +310,9 @@ class AlbumInfoAlbum {
 
 	AlbumInfoAlbum();
 
-	factory AlbumInfoAlbum.fromJson(Map<String, dynamic> json) => $AlbumInfoAlbumFromJson(json);
+	factory AlbumInfoAlbum.fromJson(Map<String, dynamic> json) => _$AlbumInfoAlbumFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoAlbumToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoAlbumToJson(this);
 
 	@override
 	String toString() {
@@ -340,9 +340,9 @@ class AlbumInfoAlbumArtists {
 
 	AlbumInfoAlbumArtists();
 
-	factory AlbumInfoAlbumArtists.fromJson(Map<String, dynamic> json) => $AlbumInfoAlbumArtistsFromJson(json);
+	factory AlbumInfoAlbumArtists.fromJson(Map<String, dynamic> json) => _$AlbumInfoAlbumArtistsFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoAlbumArtistsToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoAlbumArtistsToJson(this);
 
 	@override
 	String toString() {
@@ -373,9 +373,9 @@ class AlbumInfoAlbumArtist {
 
 	AlbumInfoAlbumArtist();
 
-	factory AlbumInfoAlbumArtist.fromJson(Map<String, dynamic> json) => $AlbumInfoAlbumArtistFromJson(json);
+	factory AlbumInfoAlbumArtist.fromJson(Map<String, dynamic> json) => _$AlbumInfoAlbumArtistFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoAlbumArtistToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoAlbumArtistToJson(this);
 
 	@override
 	String toString() {
@@ -398,9 +398,9 @@ class AlbumInfoAlbumInfo {
 
 	AlbumInfoAlbumInfo();
 
-	factory AlbumInfoAlbumInfo.fromJson(Map<String, dynamic> json) => $AlbumInfoAlbumInfoFromJson(json);
+	factory AlbumInfoAlbumInfo.fromJson(Map<String, dynamic> json) => _$AlbumInfoAlbumInfoFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoAlbumInfoToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoAlbumInfoToJson(this);
 
 	@override
 	String toString() {
@@ -424,9 +424,9 @@ class AlbumInfoAlbumInfoCommentThread {
 
 	AlbumInfoAlbumInfoCommentThread();
 
-	factory AlbumInfoAlbumInfoCommentThread.fromJson(Map<String, dynamic> json) => $AlbumInfoAlbumInfoCommentThreadFromJson(json);
+	factory AlbumInfoAlbumInfoCommentThread.fromJson(Map<String, dynamic> json) => _$AlbumInfoAlbumInfoCommentThreadFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoAlbumInfoCommentThreadToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoAlbumInfoCommentThreadToJson(this);
 
 	@override
 	String toString() {
@@ -447,9 +447,9 @@ class AlbumInfoAlbumInfoCommentThreadResourceInfo {
 
 	AlbumInfoAlbumInfoCommentThreadResourceInfo();
 
-	factory AlbumInfoAlbumInfoCommentThreadResourceInfo.fromJson(Map<String, dynamic> json) => $AlbumInfoAlbumInfoCommentThreadResourceInfoFromJson(json);
+	factory AlbumInfoAlbumInfoCommentThreadResourceInfo.fromJson(Map<String, dynamic> json) => _$AlbumInfoAlbumInfoCommentThreadResourceInfoFromJson(json);
 
-	Map<String, dynamic> toJson() => $AlbumInfoAlbumInfoCommentThreadResourceInfoToJson(this);
+	Map<String, dynamic> toJson() => _$AlbumInfoAlbumInfoCommentThreadResourceInfoToJson(this);
 
 	@override
 	String toString() {

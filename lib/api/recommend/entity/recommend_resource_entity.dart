@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/recommend_resource_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/recommend_resource_entity.g.dart';
+part 'recommend_resource_entity.g.dart';
 
 @JsonSerializable()
 class RecommendResourceEntity {
@@ -12,9 +12,9 @@ class RecommendResourceEntity {
 
 	RecommendResourceEntity();
 
-	factory RecommendResourceEntity.fromJson(Map<String, dynamic> json) => $RecommendResourceEntityFromJson(json);
+	factory RecommendResourceEntity.fromJson(Map<String, dynamic> json) => _$RecommendResourceEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $RecommendResourceEntityToJson(this);
+	Map<String, dynamic> toJson() => _$RecommendResourceEntityToJson(this);
 
 	@override
 	String toString() {
@@ -38,9 +38,9 @@ class RecommendResourceRecommend {
 
 	RecommendResourceRecommend();
 
-	factory RecommendResourceRecommend.fromJson(Map<String, dynamic> json) => $RecommendResourceRecommendFromJson(json);
+	factory RecommendResourceRecommend.fromJson(Map<String, dynamic> json) => _$RecommendResourceRecommendFromJson(json);
 
-	Map<String, dynamic> toJson() => $RecommendResourceRecommendToJson(this);
+	Map<String, dynamic> toJson() => _$RecommendResourceRecommendToJson(this);
 
 	@override
 	String toString() {
@@ -79,9 +79,9 @@ class RecommendResourceRecommendCreator {
 
 	RecommendResourceRecommendCreator();
 
-	factory RecommendResourceRecommendCreator.fromJson(Map<String, dynamic> json) => $RecommendResourceRecommendCreatorFromJson(json);
+	factory RecommendResourceRecommendCreator.fromJson(Map<String, dynamic> json) => _$RecommendResourceRecommendCreatorFromJson(json);
 
-	Map<String, dynamic> toJson() => $RecommendResourceRecommendCreatorToJson(this);
+	Map<String, dynamic> toJson() => _$RecommendResourceRecommendCreatorToJson(this);
 
 	@override
 	String toString() {

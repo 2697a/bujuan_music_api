@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:bujuan_music_api/api/album/album_api.dart';
 import 'package:bujuan_music_api/api/mv/mv_api.dart';
 import 'package:bujuan_music_api/api/playlist/playlist_api.dart';
@@ -16,15 +15,14 @@ import 'cookie.dart';
 import '../api/user/user_api.dart';
 import 'music_interceptors.dart';
 
-class BujuanMusicManager with UserApi, RecommendApi, TopApi, AlbumApi, PlaylistApi,SongApi ,MvApi{
+class BujuanMusicManager with UserApi, RecommendApi, TopApi, AlbumApi, PlaylistApi, SongApi, MvApi {
   static final BujuanMusicManager _instance = BujuanMusicManager._internal();
-
   factory BujuanMusicManager() => _instance;
 
   late Dio _dio;
-
   static late CookieJar cookieJar;
   bool _debug = false;
+  String? _manualCookie; // 恢复内存变量
 
   BujuanMusicManager._internal();
 
@@ -39,22 +37,42 @@ class BujuanMusicManager with UserApi, RecommendApi, TopApi, AlbumApi, PlaylistA
   _initDio() {
     BaseOptions options = BaseOptions(
         baseUrl: defaultUrl,
-        // baseUrl: 'https://music163.dalao.cool',
         receiveTimeout: const Duration(seconds: 10),
         connectTimeout: const Duration(seconds: 10),
         sendTimeout: const Duration(seconds: 5));
     _dio = Dio(options);
     _dio.interceptors.add(CookieManager(cookieJar));
     _dio.interceptors.add(MusicApiInterceptors());
-    dio.interceptors.add(PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseBody: true,
-        responseHeader: false,
-        error: true,
-        compact: true,
-        maxWidth: 200,
-        enabled: _debug));
+    // 恢复处理手动 cookie 的拦截器
+    _dio.interceptors.add(InterceptorsWrapper(
+      onRequest: (options, handler) {
+        if (_manualCookie != null && _manualCookie!.isNotEmpty) {
+          options.headers['Cookie'] = _manualCookie;
+        }
+        return handler.next(options);
+      },
+    ));
+    if (_debug) {
+      _dio.interceptors.add(PrettyDioLogger(
+          requestHeader: true,
+          requestBody: true,
+          responseBody: true,
+          responseHeader: false,
+          error: true,
+          compact: true,
+          maxWidth: 200,
+          enabled: _debug));
+    }
+  }
+
+  /// 设置手动 cookie（内存，同步）
+  void setCookie(String cookie) {
+    _manualCookie = cookie;
+  }
+
+  /// 清除手动 cookie
+  void clearCookie() {
+    _manualCookie = null;
   }
 
   Future<T?> post<T>({required String url, Options? options, Object? data}) async {
@@ -67,4 +85,3 @@ class BujuanMusicManager with UserApi, RecommendApi, TopApi, AlbumApi, PlaylistA
 
   Dio get dio => _dio;
 }
-

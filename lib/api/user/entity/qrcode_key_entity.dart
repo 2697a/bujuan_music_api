@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/qrcode_key_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/qrcode_key_entity.g.dart';
+part 'qrcode_key_entity.g.dart';
 
 @JsonSerializable()
 class QrcodeKeyEntity {
@@ -10,9 +10,9 @@ class QrcodeKeyEntity {
 
 	QrcodeKeyEntity();
 
-	factory QrcodeKeyEntity.fromJson(Map<String, dynamic> json) => $QrcodeKeyEntityFromJson(json);
+	factory QrcodeKeyEntity.fromJson(Map<String, dynamic> json) => _$QrcodeKeyEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $QrcodeKeyEntityToJson(this);
+	Map<String, dynamic> toJson() => _$QrcodeKeyEntityToJson(this);
 
 	@override
 	String toString() {

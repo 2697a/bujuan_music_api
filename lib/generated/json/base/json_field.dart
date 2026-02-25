@@ -6,10 +6,12 @@
 
 import 'package:meta/meta_meta.dart';
 
+/*
 @Target({TargetKind.classType})
 class JsonSerializable {
   const JsonSerializable();
 }
+*/
 
 @Target({TargetKind.field})
 class JSONField {
@@ -18,15 +20,15 @@ class JSONField {
 
   //Whether to participate in toJson
   final bool? serialize;
-  
+
   //Whether to participate in fromMap
   final bool? deserialize;
-  
+
   //Whether to participate in copyWith
   final bool? copyWith;
-  
+
   //Enumeration or not
   final bool? isEnum;
-  
+
   const JSONField({this.name, this.serialize, this.deserialize, this.isEnum, this.copyWith});
 }

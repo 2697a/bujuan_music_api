@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/like_list_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/like_list_entity.g.dart';
+part 'like_list_entity.g.dart';
 
 @JsonSerializable()
 class LikeListEntity {
@@ -11,9 +11,9 @@ class LikeListEntity {
 
 	LikeListEntity();
 
-	factory LikeListEntity.fromJson(Map<String, dynamic> json) => $LikeListEntityFromJson(json);
+	factory LikeListEntity.fromJson(Map<String, dynamic> json) => _$LikeListEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $LikeListEntityToJson(this);
+	Map<String, dynamic> toJson() => _$LikeListEntityToJson(this);
 
 	@override
 	String toString() {

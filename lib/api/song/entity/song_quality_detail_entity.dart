@@ -1,7 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
 import 'dart:convert';
 
-import '../../../generated/json/song_quality_detail_entity.g.dart';
+part 'song_quality_detail_entity.g.dart';
 
 @JsonSerializable()
 class SongQualityDetailEntity {
@@ -14,9 +15,9 @@ class SongQualityDetailEntity {
   SongQualityDetailEntity();
 
   factory SongQualityDetailEntity.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailEntityFromJson(json);
+      _$SongQualityDetailEntityFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailEntityToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailEntityToJson(this);
 
   @override
   String toString() {
@@ -41,9 +42,9 @@ class SongQualityDetailData {
   SongQualityDetailData();
 
   factory SongQualityDetailData.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailDataFromJson(json);
+      _$SongQualityDetailDataFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailDataToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailDataToJson(this);
 
   @override
   String toString() {
@@ -62,9 +63,9 @@ class SongQualityDetailDataH {
   SongQualityDetailDataH();
 
   factory SongQualityDetailDataH.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailDataHFromJson(json);
+      _$SongQualityDetailDataHFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailDataHToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailDataHToJson(this);
 
   @override
   String toString() {
@@ -83,9 +84,9 @@ class SongQualityDetailDataM {
   SongQualityDetailDataM();
 
   factory SongQualityDetailDataM.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailDataMFromJson(json);
+      _$SongQualityDetailDataMFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailDataMToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailDataMToJson(this);
 
   @override
   String toString() {
@@ -104,9 +105,9 @@ class SongQualityDetailDataL {
   SongQualityDetailDataL();
 
   factory SongQualityDetailDataL.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailDataLFromJson(json);
+      _$SongQualityDetailDataLFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailDataLToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailDataLToJson(this);
 
   @override
   String toString() {
@@ -125,9 +126,9 @@ class SongQualityDetailDataSq {
   SongQualityDetailDataSq();
 
   factory SongQualityDetailDataSq.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailDataSqFromJson(json);
+      _$SongQualityDetailDataSqFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailDataSqToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailDataSqToJson(this);
 
   @override
   String toString() {
@@ -146,9 +147,9 @@ class SongQualityDetailDataJm {
   SongQualityDetailDataJm();
 
   factory SongQualityDetailDataJm.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailDataJmFromJson(json);
+      _$SongQualityDetailDataJmFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailDataJmToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailDataJmToJson(this);
 
   @override
   String toString() {
@@ -167,9 +168,9 @@ class SongQualityDetailDataJe {
   SongQualityDetailDataJe();
 
   factory SongQualityDetailDataJe.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailDataJeFromJson(json);
+      _$SongQualityDetailDataJeFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailDataJeToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailDataJeToJson(this);
 
   @override
   String toString() {
@@ -188,9 +189,9 @@ class SongQualityDetailDataVi {
   SongQualityDetailDataVi();
 
   factory SongQualityDetailDataVi.fromJson(Map<String, dynamic> json) =>
-      $SongQualityDetailDataViFromJson(json);
+      _$SongQualityDetailDataViFromJson(json);
 
-  Map<String, dynamic> toJson() => $SongQualityDetailDataViToJson(this);
+  Map<String, dynamic> toJson() => _$SongQualityDetailDataViToJson(this);
 
   @override
   String toString() {

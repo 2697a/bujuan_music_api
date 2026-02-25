@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/create_playlist_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/create_playlist_entity.g.dart';
+part 'create_playlist_entity.g.dart';
 
 @JsonSerializable()
 class CreatePlaylistEntity {
@@ -11,9 +11,9 @@ class CreatePlaylistEntity {
 
 	CreatePlaylistEntity();
 
-	factory CreatePlaylistEntity.fromJson(Map<String, dynamic> json) => $CreatePlaylistEntityFromJson(json);
+	factory CreatePlaylistEntity.fromJson(Map<String, dynamic> json) => _$CreatePlaylistEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $CreatePlaylistEntityToJson(this);
+	Map<String, dynamic> toJson() => _$CreatePlaylistEntityToJson(this);
 
 	@override
 	String toString() {
@@ -71,9 +71,9 @@ class CreatePlaylistPlaylist {
 
 	CreatePlaylistPlaylist();
 
-	factory CreatePlaylistPlaylist.fromJson(Map<String, dynamic> json) => $CreatePlaylistPlaylistFromJson(json);
+	factory CreatePlaylistPlaylist.fromJson(Map<String, dynamic> json) => _$CreatePlaylistPlaylistFromJson(json);
 
-	Map<String, dynamic> toJson() => $CreatePlaylistPlaylistToJson(this);
+	Map<String, dynamic> toJson() => _$CreatePlaylistPlaylistToJson(this);
 
 	@override
 	String toString() {

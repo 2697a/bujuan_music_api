@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/user_info_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/user_info_entity.g.dart';
+part 'user_info_entity.g.dart';
 
 @JsonSerializable()
 class UserInfoEntity {
@@ -10,9 +10,9 @@ class UserInfoEntity {
 
 	UserInfoEntity();
 
-	factory UserInfoEntity.fromJson(Map<String, dynamic> json) => $UserInfoEntityFromJson(json);
+	factory UserInfoEntity.fromJson(Map<String, dynamic> json) => _$UserInfoEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $UserInfoEntityToJson(this);
+	Map<String, dynamic> toJson() => _$UserInfoEntityToJson(this);
 
 	@override
 	String toString() {
@@ -38,9 +38,9 @@ class UserInfoAccount {
 
 	UserInfoAccount();
 
-	factory UserInfoAccount.fromJson(Map<String, dynamic> json) => $UserInfoAccountFromJson(json);
+	factory UserInfoAccount.fromJson(Map<String, dynamic> json) => _$UserInfoAccountFromJson(json);
 
-	Map<String, dynamic> toJson() => $UserInfoAccountToJson(this);
+	Map<String, dynamic> toJson() => _$UserInfoAccountToJson(this);
 
 	@override
 	String toString() {
@@ -90,9 +90,9 @@ class UserInfoProfile {
 
 	UserInfoProfile();
 
-	factory UserInfoProfile.fromJson(Map<String, dynamic> json) => $UserInfoProfileFromJson(json);
+	factory UserInfoProfile.fromJson(Map<String, dynamic> json) => _$UserInfoProfileFromJson(json);
 
-	Map<String, dynamic> toJson() => $UserInfoProfileToJson(this);
+	Map<String, dynamic> toJson() => _$UserInfoProfileToJson(this);
 
 	@override
 	String toString() {

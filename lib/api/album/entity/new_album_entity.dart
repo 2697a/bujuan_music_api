@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/new_album_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/new_album_entity.g.dart';
+part 'new_album_entity.g.dart';
 
 @JsonSerializable()
 class NewAlbumEntity {
@@ -11,9 +11,9 @@ class NewAlbumEntity {
 
 	NewAlbumEntity();
 
-	factory NewAlbumEntity.fromJson(Map<String, dynamic> json) => $NewAlbumEntityFromJson(json);
+	factory NewAlbumEntity.fromJson(Map<String, dynamic> json) => _$NewAlbumEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $NewAlbumEntityToJson(this);
+	Map<String, dynamic> toJson() => _$NewAlbumEntityToJson(this);
 
 	@override
 	String toString() {
@@ -55,9 +55,9 @@ class NewAlbumAlbums {
 
 	NewAlbumAlbums();
 
-	factory NewAlbumAlbums.fromJson(Map<String, dynamic> json) => $NewAlbumAlbumsFromJson(json);
+	factory NewAlbumAlbums.fromJson(Map<String, dynamic> json) => _$NewAlbumAlbumsFromJson(json);
 
-	Map<String, dynamic> toJson() => $NewAlbumAlbumsToJson(this);
+	Map<String, dynamic> toJson() => _$NewAlbumAlbumsToJson(this);
 
 	@override
 	String toString() {
@@ -85,9 +85,9 @@ class NewAlbumAlbumsArtists {
 
 	NewAlbumAlbumsArtists();
 
-	factory NewAlbumAlbumsArtists.fromJson(Map<String, dynamic> json) => $NewAlbumAlbumsArtistsFromJson(json);
+	factory NewAlbumAlbumsArtists.fromJson(Map<String, dynamic> json) => _$NewAlbumAlbumsArtistsFromJson(json);
 
-	Map<String, dynamic> toJson() => $NewAlbumAlbumsArtistsToJson(this);
+	Map<String, dynamic> toJson() => _$NewAlbumAlbumsArtistsToJson(this);
 
 	@override
 	String toString() {
@@ -118,9 +118,9 @@ class NewAlbumAlbumsArtist {
 
 	NewAlbumAlbumsArtist();
 
-	factory NewAlbumAlbumsArtist.fromJson(Map<String, dynamic> json) => $NewAlbumAlbumsArtistFromJson(json);
+	factory NewAlbumAlbumsArtist.fromJson(Map<String, dynamic> json) => _$NewAlbumAlbumsArtistFromJson(json);
 
-	Map<String, dynamic> toJson() => $NewAlbumAlbumsArtistToJson(this);
+	Map<String, dynamic> toJson() => _$NewAlbumAlbumsArtistToJson(this);
 
 	@override
 	String toString() {

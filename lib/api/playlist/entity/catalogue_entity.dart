@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/catalogue_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/catalogue_entity.g.dart';
+part 'catalogue_entity.g.dart';
 
 @JsonSerializable()
 class CatalogueEntity {
@@ -12,9 +12,9 @@ class CatalogueEntity {
 
 	CatalogueEntity();
 
-	factory CatalogueEntity.fromJson(Map<String, dynamic> json) => $CatalogueEntityFromJson(json);
+	factory CatalogueEntity.fromJson(Map<String, dynamic> json) => _$CatalogueEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $CatalogueEntityToJson(this);
+	Map<String, dynamic> toJson() => _$CatalogueEntityToJson(this);
 
 	@override
 	String toString() {
@@ -36,9 +36,9 @@ class CatalogueAll {
 
 	CatalogueAll();
 
-	factory CatalogueAll.fromJson(Map<String, dynamic> json) => $CatalogueAllFromJson(json);
+	factory CatalogueAll.fromJson(Map<String, dynamic> json) => _$CatalogueAllFromJson(json);
 
-	Map<String, dynamic> toJson() => $CatalogueAllToJson(this);
+	Map<String, dynamic> toJson() => _$CatalogueAllToJson(this);
 
 	@override
 	String toString() {
@@ -60,9 +60,9 @@ class CatalogueSub {
 
 	CatalogueSub();
 
-	factory CatalogueSub.fromJson(Map<String, dynamic> json) => $CatalogueSubFromJson(json);
+	factory CatalogueSub.fromJson(Map<String, dynamic> json) => _$CatalogueSubFromJson(json);
 
-	Map<String, dynamic> toJson() => $CatalogueSubToJson(this);
+	Map<String, dynamic> toJson() => _$CatalogueSubToJson(this);
 
 	@override
 	String toString() {

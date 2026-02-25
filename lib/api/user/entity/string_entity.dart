@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/string_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/string_entity.g.dart';
+part 'string_entity.g.dart';
 
 @JsonSerializable()
 class StringEntity {
@@ -11,9 +11,9 @@ class StringEntity {
 
 	StringEntity();
 
-	factory StringEntity.fromJson(Map<String, dynamic> json) => $StringEntityFromJson(json);
+	factory StringEntity.fromJson(Map<String, dynamic> json) => _$StringEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $StringEntityToJson(this);
+	Map<String, dynamic> toJson() => _$StringEntityToJson(this);
 
 	@override
 	String toString() {

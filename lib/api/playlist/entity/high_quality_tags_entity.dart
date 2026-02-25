@@ -1,7 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:bujuan_music_api/generated/json/base/json_field.dart';
-import 'package:bujuan_music_api/generated/json/high_quality_tags_entity.g.dart';
 import 'dart:convert';
-export 'package:bujuan_music_api/generated/json/high_quality_tags_entity.g.dart';
+part 'high_quality_tags_entity.g.dart';
 
 @JsonSerializable()
 class HighQualityTagsEntity {
@@ -10,9 +10,9 @@ class HighQualityTagsEntity {
 
 	HighQualityTagsEntity();
 
-	factory HighQualityTagsEntity.fromJson(Map<String, dynamic> json) => $HighQualityTagsEntityFromJson(json);
+	factory HighQualityTagsEntity.fromJson(Map<String, dynamic> json) => _$HighQualityTagsEntityFromJson(json);
 
-	Map<String, dynamic> toJson() => $HighQualityTagsEntityToJson(this);
+	Map<String, dynamic> toJson() => _$HighQualityTagsEntityToJson(this);
 
 	@override
 	String toString() {
@@ -30,9 +30,9 @@ class HighQualityTagsTags {
 
 	HighQualityTagsTags();
 
-	factory HighQualityTagsTags.fromJson(Map<String, dynamic> json) => $HighQualityTagsTagsFromJson(json);
+	factory HighQualityTagsTags.fromJson(Map<String, dynamic> json) => _$HighQualityTagsTagsFromJson(json);
 
-	Map<String, dynamic> toJson() => $HighQualityTagsTagsToJson(this);
+	Map<String, dynamic> toJson() => _$HighQualityTagsTagsToJson(this);
 
 	@override
 	String toString() {
